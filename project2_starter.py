@@ -111,19 +111,21 @@ class Player(Character):
         Initialize a player character.
         Should call the parent constructor and add player-specific attributes.
         """
-        # TODO: Call super().__init__() with the basic character info
-        # TODO: Store the character_class (like "Warrior", "Mage", etc.)
-        # TODO: Add any other player-specific attributes (level, experience, etc.)
-        pass
+        super().__init__(name, health, strength, magic)
+        self.character_class = character_class
+        self.level = 1
+        self.experience = 0
         
     def display_stats(self):
         """
         Override the parent's display_stats to show additional player info.
         Should show everything the parent shows PLUS player-specific info.
         """
-        # TODO: Call the parent's display_stats method using super()
-        # TODO: Then print additional player info like class and level
-        pass
+     
+        super().display_stats()
+        print(f"Class      : {self.character_class}")
+        print(f"Level      : {self.level}")
+        print(f"Experience : {self.experience}")
 
 class Warrior(Player):
     """
