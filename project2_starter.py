@@ -53,6 +53,8 @@ class SimpleBattle:
 # YOUR CLASSES TO IMPLEMENT (6 CLASSES TOTAL)
 # ============================================================================
 
+import random 
+
 class Character:
     """
     Base class for all characters.
@@ -198,27 +200,29 @@ class Rogue(Player):
         Create a rogue with appropriate stats.
         Rogues should have: medium health, medium strength, medium magic
         """
-        # TODO: Call super().__init__() with rogue-appropriate stats
-        # Suggested stats: health=90, strength=12, magic=10
-        pass
+        super().__init__(name, "Rogue", heatlh=90, strength=12, magic=10)
         
     def attack(self, target):
         """
         Override the basic attack to make it rogue-specific.
         Rogues should have a chance for extra damage (critical hits).
         """
-        # TODO: Implement rogue attack
-        # Could add a chance for critical hit (double damage)
-        # Hint: use random.randint(1, 10) and if result <= 3, it's a crit
-        pass
+        damage = self.strength
+        crit_roll = random.randint(1, 10)
+        if crit_roll <= 3:
+            damage *= 2
+            print(f"Critical hit! {self.name} backstabs {target.name} for {damage} damage!")
+        else:
+            print(f"{self.name} swiftly strikes {target.name} for {damage} damage!")
+        target.take_damage(damage)
         
     def sneak_attack(self, target):
         """
         Special rogue ability - guaranteed critical hit.
         """
-        # TODO: Implement sneak attack
-        # Should always do critical damage
-        pass
+        damage = self.strength * 2
+        print(f"{self.name} performs a deadly sneak attack on {target.name} for {damage} damage!")
+        target.take_damage(damage)
 
 class Weapon:
     """
