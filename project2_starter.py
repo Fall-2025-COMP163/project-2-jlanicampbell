@@ -3,8 +3,13 @@ COMP 163 - Project 2: Character Abilities Showcase
 Name: Jelani Campbell
 Date: 11/11/25
 
-AI Usage: [Document any AI assistance used]
-Example: AI helped with inheritance structure and method overriding concepts
+AI Usage: AI assistance was used responsibly to **support** coding, not replace learning or design.  
+Specifically:
+- **ChatGPT (GPT-5)** was used for:
+  - Guidance on implementing inheritance and method overriding.  
+  - Generating docstrings and professional-style inline comments.  
+  - Reviewing logic for the `attack`, `take_damage`, and special ability methods.
+  All final logic, code structure, and debugging were completed by me.
 """
 
 # ============================================================================
